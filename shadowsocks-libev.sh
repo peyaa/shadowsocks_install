@@ -12,11 +12,11 @@ export PATH
 # Current folder
 cur_dir=`pwd`
 
-libsodium_file="libsodium-1.0.17"
+libsodium_file="libsodium-1.0.18"
 libsodium_url="https://github.com/jedisct1/libsodium/releases/download/1.0.17/libsodium-1.0.17.tar.gz"
 
-mbedtls_file="mbedtls-2.16.1"
-mbedtls_url="https://tls.mbed.org/download/mbedtls-2.16.1-gpl.tgz"
+mbedtls_file="mbedtls-2.16.2"
+mbedtls_url="https://tls.mbed.org/download/mbedtls-2.16.2-gpl.tgz"
 
 # Stream Ciphers
 ciphers=(
@@ -118,9 +118,6 @@ print_info(){
     clear
     echo "#############################################################"
     echo "# Install Shadowsocks-libev server for CentOS 6 or 7        #"
-    echo "# Intro:  https://teddysun.com/357.html                     #"
-    echo "# Author: Teddysun <i@teddysun.com>                         #"
-    echo "# Github: https://github.com/shadowsocks/shadowsocks-libev  #"
     echo "#############################################################"
     echo
 }
@@ -263,8 +260,8 @@ pre_install(){
 
     # Set shadowsocks-libev config password
     echo "Please enter password for shadowsocks-libev:"
-    read -p "(Default password: teddysun.com):" shadowsockspwd
-    [ -z "${shadowsockspwd}" ] && shadowsockspwd="teddysun.com"
+    read -p "(Default password: 123456):" shadowsockspwd
+    [ -z "${shadowsockspwd}" ] && shadowsockspwd="123456"
     echo
     echo "---------------------------"
     echo "password = ${shadowsockspwd}"
@@ -300,7 +297,7 @@ pre_install(){
         hint="${ciphers[$i-1]}"
         echo -e "${green}${i}${plain}) ${hint}"
     done
-    read -p "Which cipher you'd select(Default: ${ciphers[0]}):" pick
+    read -p "Which cipher you'd select(Default: ${ciphers[12]}):" pick
     [ -z "$pick" ] && pick=1
     expr ${pick} + 1 &>/dev/null
     if [ $? -ne 0 ]; then
