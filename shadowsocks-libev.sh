@@ -4,9 +4,6 @@ export PATH
 #===================================================================#
 #   System Required:  CentOS 6 or 7                                 #
 #   Description: Install Shadowsocks-libev server for CentOS 6 or 7 #
-#   Author: Teddysun <i@teddysun.com>                               #
-#   Thanks: @madeye <https://github.com/madeye>                     #
-#   Intro:  https://teddysun.com/357.html                           #
 #===================================================================#
 
 # Current folder
@@ -298,7 +295,7 @@ pre_install(){
         echo -e "${green}${i}${plain}) ${hint}"
     done
     read -p "Which cipher you'd select(Default: ${ciphers[12]}):" pick
-    [ -z "$pick" ] && pick=1
+    [ -z "$pick" ] && pick=13
     expr ${pick} + 1 &>/dev/null
     if [ $? -ne 0 ]; then
         echo -e "[${red}Error${plain}] Please enter a number"
