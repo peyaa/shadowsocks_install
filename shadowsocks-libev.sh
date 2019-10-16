@@ -86,7 +86,7 @@ get_latest_version(){
     [ -z ${ver} ] && echo "Error: Get shadowsocks-libev latest version failed" && exit 1
     shadowsocks_libev_ver="shadowsocks-libev-$(echo ${ver} | sed -e 's/^[a-zA-Z]//g')"
     download_link="https://github.com/shadowsocks/shadowsocks-libev/releases/download/${ver}/${shadowsocks_libev_ver}.tar.gz"
-    init_script_link="https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-libev"
+    init_script_link="https://raw.githubusercontent.com/peyaa/shadowsocks_install/master/shadowsocks-libev"
 }
 
 check_installed(){
@@ -478,7 +478,7 @@ install_shadowsocks(){
         fi
     else
         echo
-        echo -e "[${red}Error${plain}] Shadowsocks-libev install failed. please visit https://teddysun.com/357.html and contact."
+        echo -e "[${red}Error${plain}] Shadowsocks-libev install failed."
         exit 1
     fi
 
@@ -495,7 +495,6 @@ install_shadowsocks(){
     echo -e "Your Password         : \033[41;37m ${shadowsockspwd} \033[0m"
     echo -e "Your Encryption Method: \033[41;37m ${shadowsockscipher} \033[0m"
     echo
-    echo "Welcome to visit:https://teddysun.com/357.html"
     echo "Enjoy it!"
     echo
 }
