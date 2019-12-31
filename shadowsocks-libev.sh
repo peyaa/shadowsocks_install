@@ -13,7 +13,7 @@ libsodium_ver="1.0.18"
 libsodium_file="libsodium-$libsodium_ver"
 libsodium_url="https://github.com/jedisct1/libsodium/releases/download/$libsodium_ver-RELEASE/$libsodium_file.tar.gz"
 
-mbedtls_ver="2.16.2"
+mbedtls_ver="2.16.3"
 mbedtls_file="mbedtls-$mbedtls_ver"
 mbedtls_url="https://tls.mbed.org/download/$mbedtls_file-gpl.tgz"
 
